@@ -3,7 +3,15 @@
 #ceci est un script de la collection jettable :)
 trap 'rm /tmp/dping.tmp' EXIT INT QUIT
 #Chargement bibliotheques
-. ~/.thierry/lib/libG.ksh
+. ./libG.ksh
+#constantes :
+SOURCE=$(uname -n)
+OS=$(uname -s)
+CONF_DIR=
+DESTINATION=${lst_dest:=destination}
+ANALYSE_PING=analyse_ping.awk
+nbr_iteration=15
+COMPTE_RENDU=bilan.txt
 function aide
 {
 echo "
@@ -17,46 +25,22 @@ hostname ip_prod ip_admin
 }
 function custom_ping
 {
-#usage : custom_ping [ "lan_source" ] "ip_dest" "nbr_iteration"
-date_debut_${dest}="$(date)"
-if [ ${OS} = "HP-UX" ];then
-        if [ $# -eq 3 ];then
-                lan_source="$1"
-                ip_dest=$2
-                nbr_iteration="$3"
-                ping -i $lan_source $ip_dest -n $nbr_iteration
-        else erreur $KO "$0 argmuments $@ invalides - usage HPUX : ping lan_source ip_dest nbr_iteration" $ESTOP
-        fi
-elif [ ${OS} = "Linux" ];then
-        if [ $# -eq 2 ];then
-                ip_dest="$1"
-                nbr_iteration="$2"
-                ping -c "$nbr_iteration" "$ip_dest"
-        elif [ $# -eq 3 ];then
-                lan_source=$1
-                ip_dest=$2
-                nbr_iteration=$3
-                ping -I "${lan_source}" -c "$nbr_iteration" "$ip_dest"
-        else erreur $KO "$0 argmuments $@ invalides - usage LINUX : ping [ lan_source ] ip_dest nbr_iteration" $ESTOP
-        fi
-else erreur $KO "OS $OS non supporte" $ESTOP
+#ping HPUX : ping -i $lan_source $ip_dest -n $nbr_iteration
+#ping Linux : ping -c "$nbr_iteration" "$ip_dest"
+#ping Linux 3 param : ping -I "${lan_source}" -c "$nbr_iteration" "$ip_dest"
+date_debut=$(date)
+if [ $OS = Linux ];then 
+	ping -c "$nbr_iteration" "$ip_dest"
+elif [ $OS = HP-UX ];then 
+	ping $ip_dest -n $nbr_iteration
+else erreur $KO "OS non supporte" $ESTOP
 fi
-date_fin_${dest}="$(date)"
-return 0
-}
-function enchainement
-{
-custom_ping
-analyse_ping
-}
-function actions_sur_liste
-{
-#usage : actions_sur_liste "action separe par un -" "fichier contenant une liste"
-echo "non implemente"
+date_fin=$(date)
+
 }
 function analyse_ping
 {
-awk -v"variable=$SOURCE,$dest,$if,$nbr_iteration" -f $ANALYSE_PING
+awk -v source=$SOURCE -v dest=$dest -v nom_if=$if -v nbr_iteration=$nbr_iteration -v debut="$date_debut" -v fin="$date_fin" -f $ANALYSE_PING $SORTIE_PING
 erreur $? "analyse ping" $ESTOP
 }
 #aiguillage :
@@ -88,20 +72,7 @@ done
 #
 #
 #
-###############################CONSTANTES
 #
-#
-#
-#
-SOURCE=$(uname -n)
-OS=$(uname -s)
-CONF_DIR="~/.thierry/.dping"
-DESTINATION=${lst_dest:=${CONF_DIR}/destination}
-ANALYSE_PING=~/.thierry/bin/analyse_ping.awk
-#options obligatoire pour hpux
-#if [ $OS = "HP-UX" ];then
-#LAN_SOURCE=1
-#fi
 #
 #
 #
@@ -120,10 +91,12 @@ fi
 touch /tmp/dping.tmp
 if [ ${lst_dest} = NO_FILE ];then
 SORTIE_PING=${dest}.ping
-custom_ping ${LAN_SOURCE} ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
+custom_ping ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
+analyse_ping >>${COMPTE_RENDU}
 else
 while read dest ip_dest admin;do
-        custom_ping ${LAN_SOURCE} ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
-        analyse_ping
+	SORTIE_PING=${dest}.ping
+        custom_ping ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
+        analyse_ping >>${COMPTE_RENDU}
 done<${DESTINATION}
 fi

@@ -1,0 +1,14 @@
+hostname : sasuke destination : livebox interface : 
+date de debut : dim. janv. 27 01:22:12 CET 2013 date de fin   : dim. janv. 27 01:22:26 CET 2013
+moyennes transmission : rtt min/avg/max/mdev = 0.539/0.577/0.774/0.062 ms
+statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13997ms
+liste des sequences perdues : 
+derniere seq recu : 15
+[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
+hostname : sasuke destination : yst interface : 
+date de debut : dim. janv. 27 01:22:26 CET 2013 date de fin   : dim. janv. 27 01:22:40 CET 2013
+moyennes transmission : rtt min/avg/max/mdev = 0.115/0.131/0.164/0.016 ms
+statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13993ms
+liste des sequences perdues : 
+derniere seq recu : 15
+[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
