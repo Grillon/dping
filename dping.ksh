@@ -8,7 +8,7 @@ trap 'quitter' EXIT INT QUIT
 SOURCE=$(uname -n)
 OS=$(uname -s)
 CONF_DIR=
-DESTINATION=${lst_dest:=destination}
+DESTINATION=destination
 ANALYSE_PING=analyse_ping.awk
 nbr_iteration=50
 if=PRODUCTION
@@ -77,7 +77,8 @@ while getopts ":d:n:i:f:h" opt;do
                         ;;
                 i) if=${OPTARG}
                         ;;
-                f) lst_dest=${OPTARG}
+                f) #lst_dest=${OPTARG}
+                	DESTINATION=${OPTARG}
                         ;;
                 :) erreur $KO "ARGUMENT MANQUANT" $ESTOP
                         ;;

@@ -19,8 +19,8 @@ if ($0~/rtt/) { moyennes=$0 }
 if ($0~/transmitted/) { statistiques=$0 }
 }
 END{
-print "hostname : "source" destination : "dest" interface : "nom_if
-print "date de debut : "strftime("%a %d %h %Y %H:%M",debut)" date de fin   : "strftime("%a %d %h %Y %H:%M",fin)
+print "hostname : "source" - destination : "dest" - interface : "nom_if
+print "date de debut : "strftime("%a %d %h %Y %H:%M",debut)" - date de fin : "strftime("%a %d %h %Y %H:%M",fin)
 print "moyennes transmission : "moyennes
 print "statistiques : "statistiques
 print "liste des sequences perdues : "seq_manquantes
