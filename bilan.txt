@@ -1,448 +1,48 @@
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 01:22:12 CET 2013 date de fin   : dim. janv. 27 01:22:26 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.539/0.577/0.774/0.062 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13997ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 01:22:26 CET 2013 date de fin   : dim. janv. 27 01:22:40 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.115/0.131/0.164/0.016 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13993ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 12:18:05 CET 2013 date de fin   : dim. janv. 27 12:18:19 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.522/0.803/1.214/0.245 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13999ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 12:18:19 CET 2013 date de fin   : dim. janv. 27 12:18:33 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.109/0.144/0.292/0.047 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13997ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 13:17:59 CET 2013 date de fin   : dim. janv. 27 13:18:13 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.126/0.152/0.188/0.019 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 13:41:19 CET 2013 date de fin   : dim. janv. 27 13:41:33 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.133/0.168/0.249/0.037 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13999ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 13:56:14 CET 2013 date de fin   : dim. janv. 27 13:56:28 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.540/0.804/2.032/0.427 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14004ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 13:56:14 CET 2013 date de fin   : dim. janv. 27 13:56:28 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.126/0.154/0.209/0.024 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14007ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 13:57:37 CET 2013 date de fin   : dim. janv. 27 13:57:51 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.117/0.135/0.182/0.023 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13997ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 13:57:37 CET 2013 date de fin   : dim. janv. 27 13:58:01 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +12 errors, 100% packet loss, time 14021ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 13:59:07 CET 2013 date de fin   : dim. janv. 27 13:59:21 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.123/0.140/0.171/0.022 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14018ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 13:59:07 CET 2013 date de fin   : dim. janv. 27 13:59:21 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.525/0.695/1.277/0.182 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14018ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 13:59:07 CET 2013 date de fin   : dim. janv. 27 13:59:31 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +14 errors, 100% packet loss, time 14024ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 14:00:42 CET 2013 date de fin   : dim. janv. 27 14:00:56 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.542/0.886/2.616/0.494 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 14:00:42 CET 2013 date de fin   : dim. janv. 27 14:00:56 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.130/0.153/0.172/0.016 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 14:00:46 CET 2013 date de fin   : dim. janv. 27 14:01:00 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14018ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 14:00:42 CET 2013 date de fin   : dim. janv. 27 14:01:06 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +3 errors, 100% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 14:01:14 CET 2013 date de fin   : dim. janv. 27 14:01:28 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.549/0.668/1.094/0.165 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14017ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 14:01:14 CET 2013 date de fin   : dim. janv. 27 14:01:28 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.125/0.131/0.139/0.012 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14017ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 14:01:14 CET 2013 date de fin   : dim. janv. 27 14:01:38 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +14 errors, 100% packet loss, time 14027ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 14:05:56 CET 2013 date de fin   : dim. janv. 27 14:06:10 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.525/0.622/1.346/0.196 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14003ms
-liste des sequences perdues : 
-derniere seq recu : 15
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 14:05:56 CET 2013 date de fin   : dim. janv. 27 14:06:10 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.120/0.146/0.184/0.018 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14002ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 14:05:56 CET 2013 date de fin   : dim. janv. 27 14:06:20 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +8 errors, 100% packet loss, time 14023ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:11:25 CET 2013 date de fin   : dim. janv. 27 14:11:39 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.523/0.598/0.927/0.099 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13999ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:13:42 CET 2013 date de fin   : dim. janv. 27 14:13:56 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.541/0.781/1.748/0.355 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:16:49 CET 2013 date de fin   : dim. janv. 27 14:17:03 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.539/0.702/1.648/0.282 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14000ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:18:27 CET 2013 date de fin   : dim. janv. 27 14:18:41 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.523/0.821/3.051/0.628 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14002ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : 
-date de debut : dim. janv. 27 14:20:30 CET 2013 date de fin   : dim. janv. 27 14:20:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.121/0.137/0.161/0.019 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13994ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : 
-date de debut : dim. janv. 27 14:20:30 CET 2013 date de fin   : dim. janv. 27 14:20:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.531/1.291/5.507/1.540 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13995ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : 
-date de debut : dim. janv. 27 14:20:30 CET 2013 date de fin   : dim. janv. 27 14:20:54 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +4 errors, 100% packet loss, time 14020ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:27:33 CET 2013 date de fin   : dim. janv. 27 14:27:33 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.547/0.547/0.547/0.000 ms
+hostname : sasuke destination : yst interface : ADMIN
+date de debut : dim. 27 janv. 2013 20:30 date de fin   : dim. 27 janv. 2013 20:30
+moyennes transmission : rtt min/avg/max/mdev = 0.134/0.134/0.134/0.000 ms
 statistiques : 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 liste des sequences perdues : 
 derniere seq recu : 1
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : 
-date de debut : dim. janv. 27 14:32:09 CET 2013 date de fin   : dim. janv. 27 14:32:09 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.527/0.527/0.527/0.000 ms
+pour rrdtool de sasuke vers yst_ADMIN#1359315051:0
+hostname : sasuke destination : livebox interface : PRODUCTION
+date de debut : dim. 27 janv. 2013 20:30 date de fin   : dim. 27 janv. 2013 20:30
+moyennes transmission : rtt min/avg/max/mdev = 0.575/0.575/0.575/0.000 ms
 statistiques : 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 liste des sequences perdues : 
 derniere seq recu : 1
+pour rrdtool de sasuke vers livebox_PRODUCTION#1359315051:0
 [1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : admin
-date de debut : dim. janv. 27 14:32:23 CET 2013 date de fin   : dim. janv. 27 14:32:23 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.565/0.565/0.565/0.000 ms
+[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
+hostname : sasuke destination : yoyo interface : PRODUCTION
+date de debut : dim. 27 janv. 2013 20:30 date de fin   : dim. 27 janv. 2013 20:30
+moyennes transmission : 
+statistiques : 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+liste des sequences perdues : 
+derniere seq recu : 0
+pour rrdtool de sasuke vers yoyo_PRODUCTION#1359315051:100
+[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
+hostname : sasuke destination : livebox interface : PRODUCTION
+date de debut : dim. 27 janv. 2013 20:32 date de fin   : dim. 27 janv. 2013 20:32
+moyennes transmission : rtt min/avg/max/mdev = 0.540/0.540/0.540/0.000 ms
 statistiques : 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 liste des sequences perdues : 
 derniere seq recu : 1
+pour rrdtool de sasuke vers livebox_PRODUCTION#1359315171:0
 [1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : live interface : admin
-date de debut : dim. janv. 27 14:35:28 CET 2013 date de fin   : dim. janv. 27 14:35:28 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.670/0.670/0.670/0.000 ms
+hostname : sasuke destination : yst interface : ADMIN
+date de debut : dim. 27 janv. 2013 20:32 date de fin   : dim. 27 janv. 2013 20:32
+moyennes transmission : rtt min/avg/max/mdev = 0.129/0.129/0.129/0.000 ms
 statistiques : 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 liste des sequences perdues : 
 derniere seq recu : 1
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : admin
-date de debut : dim. janv. 27 14:35:39 CET 2013 date de fin   : dim. janv. 27 14:35:53 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.521/0.648/0.964/0.142 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14010ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : admin
-date de debut : dim. janv. 27 14:35:39 CET 2013 date de fin   : dim. janv. 27 14:35:53 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.113/0.127/0.168/0.015 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14013ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : admin
-date de debut : dim. janv. 27 14:35:39 CET 2013 date de fin   : dim. janv. 27 14:35:53 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14019ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:37:20 CET 2013 date de fin   : dim. janv. 27 14:37:34 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.541/0.571/0.654/0.038 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14016ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : nif
-date de debut : dim. janv. 27 14:37:20 CET 2013 date de fin   : dim. janv. 27 14:37:34 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.109/0.124/0.163/0.017 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14017ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : nif
-date de debut : dim. janv. 27 14:37:20 CET 2013 date de fin   : dim. janv. 27 14:37:34 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14020ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:38:30 CET 2013 date de fin   : dim. janv. 27 14:38:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.537/0.794/2.546/0.540 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14015ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : nif
-date de debut : dim. janv. 27 14:38:30 CET 2013 date de fin   : dim. janv. 27 14:38:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.111/0.136/0.165/0.022 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14016ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : nif
-date de debut : dim. janv. 27 14:38:30 CET 2013 date de fin   : dim. janv. 27 14:38:54 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +10 errors, 100% packet loss, time 14021ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:39:15 CET 2013 date de fin   : dim. janv. 27 14:39:29 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.543/0.790/2.072/0.410 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14018ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:39:15 CET 2013 date de fin   : dim. janv. 27 14:39:29 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.106/0.121/0.144/0.012 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14017ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : ADMIN
-date de debut : dim. janv. 27 14:39:15 CET 2013 date de fin   : dim. janv. 27 14:39:29 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14022ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:09 CET 2013 date de fin   : dim. janv. 27 14:41:23 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.540/0.601/0.747/0.072 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14001ms
-liste des sequences perdues : 
-derniere seq recu : 15
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:09 CET 2013 date de fin   : dim. janv. 27 14:41:23 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.114/0.125/0.151/0.017 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14000ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
+pour rrdtool de sasuke vers yst_ADMIN#1359315171:0
 [1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
 hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:09 CET 2013 date de fin   : dim. janv. 27 14:41:33 CET 2013
+date de debut : dim. 27 janv. 2013 20:32 date de fin   : dim. 27 janv. 2013 20:32
 moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +5 errors, 100% packet loss, time 14000ms
+statistiques : 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 liste des sequences perdues : 
 derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:30 CET 2013 date de fin   : dim. janv. 27 14:41:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.545/0.631/0.847/0.090 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14010ms
-liste des sequences perdues : 
-derniere seq recu : 15
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:30 CET 2013 date de fin   : dim. janv. 27 14:41:44 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.109/0.123/0.166/0.017 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14012ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:32 CET 2013 date de fin   : dim. janv. 27 14:41:46 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.103/0.117/0.167/0.017 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13997ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:32 CET 2013 date de fin   : dim. janv. 27 14:41:46 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.539/0.759/1.309/0.285 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13999ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:34 CET 2013 date de fin   : dim. janv. 27 14:41:48 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.540/0.750/2.111/0.385 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 13998ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:34 CET 2013 date de fin   : dim. janv. 27 14:41:48 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.091/0.101/0.111/0.013 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14000ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:35 CET 2013 date de fin   : dim. janv. 27 14:41:49 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.093/0.130/0.246/0.037 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14006ms
-liste des sequences perdues : 
-derniere seq recu : 15
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:35 CET 2013 date de fin   : dim. janv. 27 14:41:49 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.519/0.855/2.447/0.490 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14006ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yst interface : ADMIN
-date de debut : dim. janv. 27 14:41:36 CET 2013 date de fin   : dim. janv. 27 14:41:50 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.104/0.124/0.139/0.017 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14005ms
-liste des sequences perdues : 
-derniere seq recu : 15
-hostname : sasuke destination : livebox interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:36 CET 2013 date de fin   : dim. janv. 27 14:41:50 CET 2013
-moyennes transmission : rtt min/avg/max/mdev = 0.538/0.692/1.514/0.260 ms
-statistiques : 15 packets transmitted, 15 received, 0% packet loss, time 14006ms
-liste des sequences perdues : 
-derniere seq recu : 15
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:30 CET 2013 date de fin   : dim. janv. 27 14:41:54 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +3 errors, 100% packet loss, time 14034ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:32 CET 2013 date de fin   : dim. janv. 27 14:41:56 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +2 errors, 100% packet loss, time 14007ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:34 CET 2013 date de fin   : dim. janv. 27 14:41:58 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +9 errors, 100% packet loss, time 14012ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:35 CET 2013 date de fin   : dim. janv. 27 14:41:59 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +12 errors, 100% packet loss, time 14023ms
-liste des sequences perdues : 
-derniere seq recu : 0
-[1m sasuke [22m : [32m analyse ping [42m[37m OK [0m
-hostname : sasuke destination : yoyo interface : PRODUCTION
-date de debut : dim. janv. 27 14:41:36 CET 2013 date de fin   : dim. janv. 27 14:42:00 CET 2013
-moyennes transmission : 
-statistiques : 15 packets transmitted, 0 received, +11 errors, 100% packet loss, time 14038ms
-liste des sequences perdues : 
-derniere seq recu : 0
+pour rrdtool de sasuke vers yoyo_PRODUCTION#1359315171:100
 [1m sasuke [22m : [32m analyse ping [42m[37m OK [0m

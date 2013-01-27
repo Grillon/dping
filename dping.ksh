@@ -10,7 +10,7 @@ OS=$(uname -s)
 CONF_DIR=
 DESTINATION=${lst_dest:=destination}
 ANALYSE_PING=analyse_ping.awk
-nbr_iteration=15
+nbr_iteration=50
 if=PRODUCTION
 COMPTE_RENDU=bilan.txt
 function aide
@@ -31,14 +31,14 @@ function custom_ping
 #ping Linux 3 param : ping -I "${lan_source}" -c "$nbr_iteration" "$ip_dest"
 ip_dest=$1
 nbr_iteration=$2
-date_debut=$(date)
+date_debut=$(date +%s)
 if [ "$OS" = Linux ];then 
 	ping -c "$nbr_iteration" "$ip_dest"
 elif [ "$OS" = HP-UX ];then 
 	ping $ip_dest -n $nbr_iteration
 else erreur $KO "OS non supporte" $ESTOP
 fi
-date_fin=$(date)
+date_fin=$(date +%s)
 
 }
 function analyse_ping
