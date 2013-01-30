@@ -11,7 +11,7 @@ function initCouleur
 #tCouleur pour le texte et fCouleur pour le fond; a pour activation; d pour desactivation; raz pour revenir
 #a l'etat d'origine
 #cette fonction vient tout droit de wicked cool shell script;
-esc="\033"
+esc=""
 tRouge="${esc}[31m";    tVert="${esc}[32m"
 tBlanc="${esc}[37m";    tNoir="${esc}[30m"
 fRouge="${esc}[41m";    fVert="${esc}[42m"
