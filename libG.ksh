@@ -4,6 +4,27 @@ OK=0;
 KO=1;
 ECONT=1;
 ESTOP=251;
+function debug
+{
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+case $1 in
+0) MODE_DEBUG=""
+	;;
+1)	MODE_DEBUG="set -x"
+	;;
+2)	MODE_DEBUG="set -xv"
+	;;
+*)	erreur $KO "$0 : argument $1 invalides" $ECONT
+	MODE_DEBUG="set -xv"
+	return 1
+	;;
+esac
+return 0
+}
+function entierValide
+{
+echo "a faire"
+}
 function initCouleur
 {
 #usage : initCouleur (charge des variable portant les code ANSI de couleurs)
@@ -11,7 +32,8 @@ function initCouleur
 #tCouleur pour le texte et fCouleur pour le fond; a pour activation; d pour desactivation; raz pour revenir
 #a l'etat d'origine
 #cette fonction vient tout droit de wicked cool shell script;
-esc="\033"
+$MODE_DEBUG
+esc=""
 tRouge="${esc}[31m";    tVert="${esc}[32m"
 tBlanc="${esc}[37m";    tNoir="${esc}[30m"
 fRouge="${esc}[41m";    fVert="${esc}[42m"
@@ -20,6 +42,7 @@ raz="${esc}[0m"
 }
 function erreur
 {
+$MODE_DEBUG
 #erreur devient complexe
 #arg 1 : numero d'erreur;
 #arg 2 : message;
