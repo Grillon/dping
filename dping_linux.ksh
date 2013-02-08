@@ -27,10 +27,10 @@ COMPTE_RENDU=${RESULTAT}/${COMPTE_RENDU}
 . $REP_SOURCE/lib_dping_linux.ksh
 #
 #la fonction debug peut recevoir en argument : 0(desactive) 1(set -x) 2(set -xv)
-debug 1
+debug 0
 $MODE_DEBUG
 #aiguillage :
-while getopts ":d:n:i:f:hl:t:e:" opt;do
+while getopts ":d:n:i:f:hl:t:e:s:" opt;do
         case "$opt" in
                 d) arg_d ${OPTARG}
                         ;;
@@ -50,6 +50,11 @@ while getopts ":d:n:i:f:hl:t:e:" opt;do
 					unset arg1 
 					unset arg2
 					unset arg3
+					IPValide $cible_scp
+					erreur $? "format de l'ip $cible_scp" $ESTOP
+					alNumValide $user_scp
+					erreur $? "format du username $user_scp" $ESTOP
+					if [ ! "$lan" ];then erreur $KO "nom du lan non fournit" $ESTOP;fi
 					test_bp 2>>$RESULTAT_ERR 1>>$RESULTAT_BPP
 					#resultat test BandePassanteNegative et Positive
 					sed -ni "/maintenant/p" $RESULTAT_ERR
@@ -63,7 +68,10 @@ while getopts ":d:n:i:f:hl:t:e:" opt;do
 					fi
 					exit 0
 						;;
-					
+				s) taille_packets=${OPTARG}
+					decimalValide $taille_packets
+					erreur $? "taille $taille_packets" $ESTOP
+						;;
                 :) erreur $KO "ARGUMENT MANQUANT" $ESTOP
                         ;;
                 \?) aide
@@ -91,13 +99,16 @@ if [ "${lst_dest}" = NO_FILE ];then
 	custom_ping ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
 	analyse_ping >>${COMPTE_RENDU}
 else
-	while read dest ip_dest lan nif;do
+	while read dest ip_dest lan nif taille_packets;do
 		lock=/tmp/dping.tmp
 		touch $lock
-		if [ -n "$nif" ];then
-			$0 -d ${dest}-${ip_dest} -n ${nbr_iteration} -l ${lan} -i ${nif}&
+		IPValide $ip_dest
+		alNumValide $nif
+		if [ -n "$taille_packets" ];then
+			decimalValide $taille_packets
+			$0 -d ${dest}-${ip_dest} -n ${nbr_iteration} -l ${lan} -i ${nif} -s ${taille_packets}&
 		else
-			$0 -d ${dest}-${ip_dest} -n ${nbr_iteration} -l ${lan} -i ${if}&
+			$0 -d ${dest}-${ip_dest} -n ${nbr_iteration} -l ${lan} -i ${nif}&
 		fi
 		sleep 5
 	done<${DESTINATION}

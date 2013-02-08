@@ -23,7 +23,28 @@ return 0
 }
 function entierValide
 {
-echo "a faire"
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+return $(echo "$1" | awk '{if ($0 ~ /^[0-9]+$/) {print "0"} else print "1"}')
+}
+function decimalValide
+{
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+return $(echo "$1" | awk '{if ($0 ~ /^[0-9]+\.[0-9]+$/) {print "0"} else print "1"}')
+}
+function IPValide
+{
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+return $(echo "$1" | awk '{if ($0 ~ /^[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]$/) {print "0"} else print "1"}')
+}
+function hostValide
+{
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+return $(echo "$1" | awk '{if ($0 ~ /^[a-zA-Z_-\.0-9]+$/) {print "0"} else print "1"}')
+}
+function alNumValide
+{
+if [ $# -ne 1 ];then erreur $KO "$0 : nombre d'argument incorrects" $ECONT;fi
+return $(echo "$1" | awk '{if ($0 ~ /^[a-zA-Z0-9]+$/) {print "0"} else print "1"}')
 }
 function initCouleur
 {

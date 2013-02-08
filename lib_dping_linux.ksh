@@ -39,7 +39,7 @@ scp ${T_IO} ${user_scp}@${cible_scp}:${R_IO}&
 scp_pid=$(jobs -p)
 while [ $(jobs -p) ];do
 	analyse_bp
-	if [ ${txbps} -lt 10000000 ];then erreur $KO "destination : ${user_scp} - debut : ${date_debut} - maintenant : ${date_fin} -- sortie : ${txbps} bps - entree : ${rxbps} bps" $ECONT;fi
+	if [ ${txbps} -lt 10000000 ];then erreur $KO "${cible_scp} - debut : ${date_debut} - maintenant : ${date_fin} -- sortie : ${txbps} bps - entree : ${rxbps} bps" $ECONT;fi
 	typeset date_fin=$(date +%s)
 	erreur $OK "${date_fin}:${txbps}:${rxbps}" $ECONT
 	if [ $((${date_fin} - ${date_debut})) -gt 100 ];then 
