@@ -5,8 +5,10 @@ trap 'quitter' EXIT INT QUIT
 #Chargement bibliotheques
 #constantes :
 MODE_DEBUG=""
+ERREUR=0
 REP_SOURCE=/tmp/sidobre
 RESULTAT=~
+TCPDUMP=/usr/sbin/tcpdump
 SOURCE=$(uname -n)
 OS=$(uname -s)
 CONF_DIR=
@@ -19,6 +21,7 @@ ANALYSE_PING=$REP_SOURCE/$ANALYSE_PING
 RESULTAT_BPP=${RESULTAT}/rrdtool_bp
 RESULTAT_ERR=${RESULTAT}/log.err
 nbr_iteration=50
+capture=0 # par defaut pas de capture
 if=PRODUCTION
 COMPTE_RENDU=bilan.txt
 COMPTE_RENDU=${RESULTAT}/${COMPTE_RENDU}
@@ -30,7 +33,7 @@ COMPTE_RENDU=${RESULTAT}/${COMPTE_RENDU}
 debug 0
 $MODE_DEBUG
 #aiguillage :
-while getopts ":d:n:i:f:hl:t:e:s:" opt;do
+while getopts ":d:n:i:f:hl:t:e:s:c" opt;do
         case "$opt" in
                 d) arg_d ${OPTARG}
                         ;;
@@ -72,6 +75,10 @@ while getopts ":d:n:i:f:hl:t:e:s:" opt;do
 					decimalValide $taille_packets
 					erreur $? "taille $taille_packets" $ESTOP
 						;;
+				c) echo "capture de trame"
+					capture=1; #indique qu'une capture devra être faite
+					lock_tcpdump=/tmp/ltcpdump
+						;;
                 :) erreur $KO "ARGUMENT MANQUANT" $ESTOP
                         ;;
                 \?) aide
@@ -99,11 +106,35 @@ if [ "${lst_dest}" = NO_FILE ];then
 	custom_ping ${ip_dest} ${nbr_iteration} >${SORTIE_PING}
 	analyse_ping >>${COMPTE_RENDU}
 else
+	lock=/tmp/dping.tmp
+	if [ -a $lock ];then 
+		erreur $KO "dping massif deja encours" $ESTOP
+	fi
+	touch $lock
 	while read dest ip_dest lan nif taille_packets;do
-		lock=/tmp/dping.tmp
-		touch $lock
 		IPValide $ip_dest
 		alNumValide $nif
+		if [ "${capture}" -eq 1 ];then
+			erreur $(baseOK) "la base est bien en place" $ECONT "$0 -e creation"
+			if [ $ERREUR -gt 0 ];then 
+				erreur $KO "echec creation de la base, aucune capture" $ECONT
+			else
+				if [ -x $TCPDUMP ];then
+					fichier_dump=$TR_BASE/$(uname -n)_$(date +%Y%m%d_%H%M).dump
+					TCPDUMP_COMMANDE="$TCPDUMP -i ${lan} -C 1 -W 5 -w $fichier_dump"
+					if [ ! -a $lock_tcpdump ];then 
+						touch $lock_tcpdump
+						$TCPDUMP_COMMANDE&
+						erreur $? "execution commande $TCPDUMP_COMMANDE" $ECONT
+						capture=2
+					else 
+						erreur $KO "tcpdump deja en cours" $ECONT
+					fi
+				else
+					erreur $KO "la commande $TCPDUMP n'existe pas" $ECONT
+				fi
+			fi
+		fi	
 		if [ -n "$taille_packets" ];then
 			decimalValide $taille_packets
 			$0 -d ${dest}-${ip_dest} -n ${nbr_iteration} -l ${lan} -i ${nif} -s ${taille_packets}&
@@ -112,4 +143,18 @@ else
 		fi
 		sleep 5
 	done<${DESTINATION}
+	if [ ${capture} -eq 2 ];then
+		debut_dump=$(date +%s)
+		while [ $(jobs -p | wc -l) -gt 0 ];
+		do
+			sleep 1;
+			instant_dump=$(date +%s)
+			if [ $(($instant_dump - $debut_dump)) -gt 120 ];then
+				for i in $(jobs -p);do kill $i;done
+			fi
+			#on attends la fin des pings
+		done
+		erreur $(pertes) "receptions paquets ping" $ECONT "rm $fichier_dump[0-4]"
+		rm $lock_tcpdump
+	fi
 fi

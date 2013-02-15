@@ -74,6 +74,7 @@ if [ $1 -ne 0 ];then
 echo "${aGras} $(uname -n) ${dGras} : ${tRouge} $2 ${fRouge}${tBlanc} KO ${raz}" >&2
 if [ -n "$4" ];then
 $4
+if [ $? -gt 0 ];then ERREUR=$?;fi
 fi
 if [ $3 -ge 251 ];then
 exit $3

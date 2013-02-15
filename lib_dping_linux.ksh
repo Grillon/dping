@@ -39,8 +39,8 @@ scp ${T_IO} ${user_scp}@${cible_scp}:${R_IO}&
 scp_pid=$(jobs -p)
 while [ $(jobs -p) ];do
 	analyse_bp
-	if [ ${txbps} -lt 10000000 ];then erreur $KO "${cible_scp} - debut : ${date_debut} - maintenant : ${date_fin} -- sortie : ${txbps} bps - entree : ${rxbps} bps" $ECONT;fi
 	typeset date_fin=$(date +%s)
+	if [ ${txbps} -lt 10000000 ];then erreur $KO "${cible_scp} - debut : ${date_debut} - maintenant : ${date_fin} -- sortie : ${txbps} bps - entree : ${rxbps} bps" $ECONT;fi
 	erreur $OK "${date_fin}:${txbps}:${rxbps}" $ECONT
 	if [ $((${date_fin} - ${date_debut})) -gt 100 ];then 
 		erreur $KO "transfert trop long" $ECONT
@@ -70,6 +70,9 @@ rm "$lock"
 fi
 if [ -n "$SORTIE_PING" ];then
 rm "$SORTIE_PING"
+fi
+if [ -n "$lock_tcpdump" ];then
+rm "$lock_tcpdump"
 fi
 }
 function arg_d
@@ -119,5 +122,21 @@ if [ -a $TR_BASE ];then
 	rmdir $TR_BASE
 	erreur $? "suppression du rep $TR_BASE" $ESTOP
 else erreur $KO "le repertoire $TR_BASE n'existe pas" $ESTOP
+fi
+}
+function pertes
+{
+#indique s'il y a des pertes
+typeset pertes=1
+for i in $(grep _ $COMPTE_RENDU | tail -$(wc -l $DESTINATION | cut -d" " -f1) | cut -d: -f2);do if [ $i -gt 0 ]; then pertes=0;fi;done;
+echo $pertes
+}
+function baseOK
+{
+typeset fs_base=$(df -hP $TR_BASE | awk 'NR>1 {print $1}')
+if [ $fs_base = "tmpfs" ];then 
+	echo 0
+else 
+	echo 1
 fi
 }
