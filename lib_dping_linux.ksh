@@ -1,3 +1,24 @@
+#!/usr/bin/env ksh
+MODE_DEBUG=""
+ERREUR=0
+RESULTAT=~
+TCPDUMP=/usr/sbin/tcpdump
+SOURCE=$(uname -n)
+OS=$(uname -s)
+CONF_DIR=
+TR_BASE=/tmp/yst/test_dd
+T_IO=$TR_BASE/tio.data
+R_IO=$TR_BASE/rio.data
+DESTINATION=destination
+ANALYSE_PING=analyse_ping_linux.awk
+ANALYSE_PING=$REP_SOURCE/$ANALYSE_PING
+RESULTAT_BPP=${RESULTAT}/rrdtool_bp
+RESULTAT_ERR=${RESULTAT}/log.err
+nbr_iteration=50
+capture=0 # par defaut pas de capture
+if=PRODUCTION
+COMPTE_RENDU=bilan.txt
+COMPTE_RENDU=${RESULTAT}/${COMPTE_RENDU}
 function aide
 {
 echo "
