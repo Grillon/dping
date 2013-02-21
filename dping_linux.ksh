@@ -13,9 +13,10 @@ REP_SOURCE=/tmp/sidobre
 debug 0
 $MODE_DEBUG
 #aiguillage :
-while getopts ":d:n:i:f:hl:t:e:s:c" opt;do
+while getopts ":d:n:i:f:hl:t:e:s:co:" opt;do
         case "$opt" in
                 d) arg_d ${OPTARG}
+				 #separe les arguments dest-ip_dest
                         ;;
                 n) nbr_iteration=${OPTARG};
                         ;;
@@ -56,14 +57,20 @@ while getopts ":d:n:i:f:hl:t:e:s:c" opt;do
 					erreur $? "taille $taille_packets" $ESTOP
 						;;
 				c) echo "capture de trame"
-					capture=1; #indique qu'une capture devra être faite
+					capture=1; #indique qu'une capture devra être faite, n'est valable qu'avec -f
 					lock_tcpdump=/tmp/ltcpdump
 						;;
+				o) #ordonancement : C'est simplement l'ajout dans la crontab
+					#l'argument c'est le text à ajouter à la crontab
+					#
+					aide
+					exit 0;;
                 :) erreur $KO "ARGUMENT MANQUANT" $ESTOP
                         ;;
                 \?) aide
-                        ;;
+						;;
 		*) aide
+			exit 0
 			;;
         esac
 done

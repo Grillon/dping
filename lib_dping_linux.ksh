@@ -23,11 +23,11 @@ function aide
 {
 echo "
 USAGE : $0 [ -d hostname_destination-ip_dest ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ]
-$0 [ -f fichier_liste_destination ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ]
+$0 [ -f fichier_liste_destination ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ] [ -c ]
 $0 [ -t user-ip_cible ]
 
 # exemple d'une ligne du fichier :
-hostname ip interface [ nom_interface ]
+hostname ip interface nom_interface nbr_iteration
 #lorsque le nom_interface n'est pas fournit il est remplace par PRODUCTION
 "
 }
@@ -104,7 +104,7 @@ OLDIFS="$IFS";
 IFS=\-;
 set ${arguments}
 if [ $# -ne 2 ];then erreur $KO "arguments de -${opt} invalides" $ESTOP aide;fi
-dest=$1;
+nom_dest=$1;
 ip_dest=$2;
 IFS="${OLDIFS}";
 lst_dest=NO_FILE
