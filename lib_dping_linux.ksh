@@ -16,6 +16,7 @@ RESULTAT_BPP=${RESULTAT}/rrdtool_bp
 RESULTAT_ERR=${RESULTAT}/log.err
 nbr_iteration=50
 taille_paquets=56
+tmout_tcpdump=12
 COMPTE_RENDU=bilan.txt
 COMPTE_RENDU=${RESULTAT}/${COMPTE_RENDU}
 #variable d'aiguillage :
@@ -26,10 +27,11 @@ nbr_arg_transfert=0
 
 function aide
 {
+$MODE_DEBUG
 echo "
-USAGE : $0 [ -d hostname_destination-ip_dest ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ]
-$0 [ -f fichier_liste_destination ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ] [ -c ]
-$0 [ -t user@ip_cible ]
+USAGE : $script_appellant [ -d hostname_destination-ip_dest ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ]
+$script_appellant [ -f fichier_liste_destination ] [ -i type_if (prod/admin) ] [ -n nombre_iteration ] [ -c ]
+$script_appellant [ -t user@ip_cible ]
 
 # exemple d'une ligne du fichier :
 hostname ip interface nom_interface nbr_iteration
@@ -38,6 +40,7 @@ hostname ip interface nom_interface nbr_iteration
 }
 function custom_ping
 {
+$MODE_DEBUG
 #ping HPUX : ping -i $lan_source $ip_dest -n $nbr_iteration
 #ping Linux : ping -c "$nbr_iteration" -s "$taille_paquets" "$ip_dest"
 #ping Linux 3 param : ping -I "${lan_source}" -c "$nbr_iteration" "$ip_dest"
@@ -51,12 +54,13 @@ typeset lan=$4
 
 date_debut=$(date +%s)
 ping -c "$nbr_iteration" -s "$taille_paquets" "$ip_dest"
-bp=analyse_bp ${lan}
+bp=$(analyse_bp ${lan})
 date_fin=$(date +%s)
 }
 function test_bp
 {
-if [ $# -ne 2 ];then erreur $KO "$0 : nombre d'argument incorrects" $ESTOP;fi
+$MODE_DEBUG
+if [ $# -ne 2 ];then erreur $KO "$script_appellant : nombre d'argument incorrects" $ESTOP;fi
 typeset user_at_cible_scp=$1
 typeset lan=$2
 typeset date_debut=$(date +%s)
@@ -76,6 +80,7 @@ done
 }
 function analyse_bp
 {
+$MODE_DEBUG
 #arg lan
 #sar -n DEV 2 1 | awk '/Average/ && (/bond0.1495/ || /IFACE/) {print $0}'
 #Average:        IFACE   rxpck/s   txpck/s   rxbyt/s   txbyt/s   rxcmp/s   txcmp/s  rxmcst/s
@@ -91,17 +96,19 @@ echo ${txbps}-${rxbps}
 }
 function analyse_ping
 {
+$MODE_DEBUG
 #c'est une fonction non utilisable directement donc je en verifie pas les arguments
-awk -v bp_tr=$bp -v source=$SOURCE -v dest=$dest -v nom_if=$if -v nbr_iteration=$nbr_iteration -v debut=$date_debut -v fin=$date_fin -f $ANALYSE_PING $sortie_ping
+awk -v bp_tr=$bp -v source=$SOURCE -v dest=$nom_dest -v nom_if=$if -v nbr_iteration=$nbr_iteration -v debut=$date_debut -v fin=$date_fin -f $ANALYSE_PING $sortie_ping
 erreur $? "analyse ping" $ESTOP
 }
 function quitter
 {
-if [ -n "$lock" ];then 
+$MODE_DEBUG
+if [ -n "$DESTINATION" ];then 
 rm "$lock"
 fi
-if [ -n "$SORTIE_PING" ];then
-rm "$SORTIE_PING"
+if [ -n "$sortie_ping" ];then
+rm "$sortie_ping"
 fi
 if [ -n "$lock_tcpdump" ];then
 rm "$lock_tcpdump"
@@ -109,6 +116,7 @@ fi
 }
 function arg_d
 {
+$MODE_DEBUG
 #gestion de l'argument -d
 arguments=$1
 OLDIFS="$IFS";
@@ -175,9 +183,9 @@ function capture
 {
 #capture ${lan}
 if [ $# -ne 1 ];then 
-	erreur $KO "$0 : nombre d'argument incorrects" $ESTOP
+	erreur $KO "$script_appellant : nombre d'argument incorrects" $ESTOP
 fi
-erreur $(baseOK) "presence de la base" $ECONT "$0 -e creation"
+erreur $(baseOK) "presence de la base" $ECONT "$script_appellant -e creation"
 if [ $ERREUR -gt 0 ];then 
 	erreur $KO "echec creation de la base, aucune capture" $ECONT
 else
@@ -191,9 +199,12 @@ else
 			erreur $? "execution commande $TCPDUMP_COMMANDE" $ECONT
 			debut_dump=$(date +%s)
 			if [ $ERREUR -eq 0 ];then
+				a="$(jobs -p)"
 				job_tcpdump=$(echo $a | awk '{print $NF}')
+				unset ERREUR
+				unset a
 			else
-				job_tcpdump=""
+				erreur $KO "capture job tcpdump impossible" $ECONT
 			fi
 		else 
 			erreur $KO "tcpdump deja en cours" $ECONT
@@ -205,23 +216,68 @@ fi
 }
 function arret_job_capture
 {
-if [ $# -eq 2 ];then
-	typeset tmout_dump=$2
-elif [ $# -ne 1 ];then 
-	erreur $KO "$0 : nombre d'argument incorrects" $ESTOP
+if [ $# -ne 2 ];then
+	erreur $KO "$script_appellant : nombre d'argument incorrects" $ESTOP
 fi
 typeset job_tcpdump=$1
+typeset tmout_tcpdump=$2
 while [ $(jobs -p | egrep "^${job_tcpdump}$") ];
 	do
 		sleep 1;
 		instant_dump=$(date +%s)
 		if [ ! $debut_dump ];then
 			kill ${job_tcpdump}
-		elif [ $(($instant_dump - $debut_dump)) -gt $tmout_dump ];then
+		elif [ $(($instant_dump - $debut_dump)) -gt $tmout_tcpdump ];then
 			kill ${job_tcpdump}
 		fi
 		#on attends la fin des pings
 	done
 	erreur $(pertes) "receptions paquets ping" $ECONT "rm $fichier_dump[0-4]"
 	rm $lock_tcpdump
+}
+function multiple_ping
+{
+if [ ! -a $DESTINATION ];then
+	erreur $KO "le fichier specifié n'existe pas" $ESTOP
+fi
+lock=/tmp/dping.tmp
+if [ -a $lock ];then
+	erreur $KO "ping multiple deja en cours" $ESTOP
+else
+	touch $lock
+fi
+while read arguments;do
+	OLDIFS="$IFS";
+	IFS=" ";
+	set ${arguments};
+	nom_dest=$1
+	ip_dest=$2
+	lan=$3
+	nif=$4
+	if [ $capture -eq 1 ];then
+		$script_appellant -l ${lan} -c
+	fi
+	if [ "$5" ];then 
+		niterations=$5
+	fi
+	if [ "$6" ];then
+		tpackets=$6
+	fi
+	IFS=$OLDIFS
+	IPValide $ip_dest
+	alNumValide $nif
+	commande_single_ping="$script_appellant -d ${nom_dest}-${ip_dest} -l ${lan} -i ${nif}"
+	if [ -n "$tpackets" ];then
+		decimalValide $tpackets
+		commande_single_ping="$commande_single_ping -s ${tpackets}"
+	fi
+	if [ -n "$niterations" ];then
+		decimalValide $niterations
+        commande_single_ping="$commande_single_ping -n ${niterations}"
+	fi
+	$commande_single_ping&
+	unset tpackets
+	unset niterations
+	sleep 5
+done<${DESTINATION}
 }
